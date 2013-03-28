@@ -19,3 +19,7 @@ Below is the abstract we submitted to FVNUG.
 > Carl has a strong background in many of the Microsoft technologies and already has two published Windows Phone apps in the Microsoft App Store.  Carl is also a father of four boys and enjoys making artisanal foods. caschw.com @carlschweitzer
 > 
 > Brandon has been working with web technologies personally and professionally for over ten years. He is also a prolific photographer, a recovering Ruby developer, and is a bit of a foodie. brandonmartinez.com @brandonmartinez
+
+Overall, we hope to ease your overall CSS-based development using powerfall SASS tools. Then you won't have to fight with CSS.
+
+![CSS](http://i.imgur.com/Q3cUg29.gif "Tired of figuring out a huge CSS hierarchy?")
