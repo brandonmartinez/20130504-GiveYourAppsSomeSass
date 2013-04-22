@@ -25,6 +25,7 @@
 			<article id="slideIntro">
 				<h1>Give Your Apps Some SASS!</h1>
 				<p>Using OOCSS and SASS to Build Web and Native Applications</p>
+				<img src="http://sass-lang.com/images/sass.gif" class="align-center" style="margin-top: 100px; margin-left: auto; margin-right: auto;" />
 			</article>
 			<article>
 				<h1>Objected-Oriented <em>CSS</em>?</h1>
@@ -44,17 +45,23 @@
 			</article>
 			<article>
 				<h1>What is an "Object" in CSS?</h1>
-				<p>As mentioned before, there are two approaches to OOCSS. As such, there are
-				two potential definitions of what constitutes an object.</p>
-				<ul>
-					<li>Multi-Object HTML: objects are small, reusable pieces of CSS that get applied
-					to HTML elements to add objects to the markup. This creates a smaller amount of CSS,
-					but may cause conflicts between various styles defining the same attributes.</li>
-					<li>Multi-Selector CSS: objects are a grouping of CSS styles that would get applied
-						to a matching or similar block of HTML. This produces more CSS, but establishes
-						a more semantic approach to OOCSS.</li>
-				</ul>
-				<p>The latter will be our approach.</p>
+				<p>In our object-oriented approach, an "object" is a semantic grouping of CSS that would be applied to a similar block of HTML.</p>
+				<p>In pure CSS, it would look something like this:</p>
+<script type="syntaxhighlighter" class="brush: css">
+.widget {
+	display: block;
+}
+
+.widget .name {
+	font-size: 100px;
+}
+</script>
+<p>The HTML could look like this:</p>
+<script type="syntaxhighlighter" class="brush: html">
+<div class="widget">
+	<span class="title">A Widget!</span>
+</div>
+</script>
 			</article>
 			<article>
 				<h1>Building an Object: The CSS</h1>
@@ -337,7 +344,13 @@ $normalFontSize: 12pt;
   display: none; }
 </script>				
 			</article>
-			<article id="slide010">
+			<article>
+				<h1>Demo 1</h1><h2>Windows 8 Application</h2>
+			</article>
+			<article>
+				<h1>Demo 2</h1><h2>ASP.NET Web Application</h1>
+			</article>
+			<article>
 				<h1>Thank You</h1>
 				
 				<h2>References</h2>
