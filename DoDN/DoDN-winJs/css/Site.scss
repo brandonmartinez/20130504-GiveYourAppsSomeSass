@@ -1,0 +1,54 @@
+﻿$background: #008000;
+$solidBorder: 1px solid black;
+
+@mixin transformRotate($degrees:2deg){
+	transform: rotate($degrees);
+}
+
+body {
+	margin: 10px;
+    background: $background;
+    overflow: hidden;
+    position: relative;
+    -ms-touch-action: auto;
+}
+
+.polaroid {
+	display: inline-block;
+    width:230px;
+	background: white;
+    border: $solidBorder;
+    margin: 15px;
+    padding: 15px {
+		bottom: 0px;
+	}
+    	
+	&.rotate1Degree{
+		@include transformRotate(1deg);
+	}
+	&.rotate2Degrees{
+		@include transformRotate(2deg);
+	}
+	&.rotateMinus3Degrees{
+		@include transformRotate(-3deg);
+	}
+	&.rotateMinus4Degrees{
+		@include transformRotate(-4deg);
+	}
+
+	img {	
+		width: 230px;
+		height: 230px;
+		background: black;
+	}
+	.handwriting {
+		text-align: center;
+		color: #333;
+		font: {
+			family:"Buxton Sketch";
+			size:24px;
+			weight: bold;
+		}
+		padding:10px;
+	}
+}
