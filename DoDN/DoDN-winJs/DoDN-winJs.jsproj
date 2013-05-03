@@ -53,17 +53,40 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\Site.min.css" />
-    <Content Include="css\Site.scss" />
+    <Content Include="..\DoDN-MVC\Content\Site.css">
+      <Link>css\Site.css</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Content\Site.min.css">
+      <Link>css\Site.min.css</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Content\Site.scss">
+      <Link>css\Site.scss</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\001.jpg">
+      <Link>images\001.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\002.jpg">
+      <Link>images\002.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\003.jpg">
+      <Link>images\003.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\004.jpg">
+      <Link>images\004.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\005.jpg">
+      <Link>images\005.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\006.jpg">
+      <Link>images\006.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\007.jpg">
+      <Link>images\007.jpg</Link>
+    </Content>
+    <Content Include="..\DoDN-MVC\Images\008.jpg">
+      <Link>images\008.jpg</Link>
+    </Content>
     <Content Include="default.html" />
-    <Content Include="images\001.jpg" />
-    <Content Include="images\002.jpg" />
-    <Content Include="images\003.jpg" />
-    <Content Include="images\004.jpg" />
-    <Content Include="images\005.jpg" />
-    <Content Include="images\006.jpg" />
-    <Content Include="images\007.jpg" />
-    <Content Include="images\008.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />

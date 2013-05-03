@@ -8,9 +8,15 @@ $solidBorder: 1px solid black;
 body {
 	margin: 10px;
     background: $background;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
     -ms-touch-action: auto;
+}
+
+.instagram{
+	img{
+		opacity: 0.4;
+	}
 }
 
 .polaroid {
