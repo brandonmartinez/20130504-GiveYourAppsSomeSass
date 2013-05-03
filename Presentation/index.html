@@ -14,11 +14,11 @@
 	<head>
 		<title>Give Your Apps Some SASS!</title>
 		<meta charset="utf-8" />
-		<script type="text/javascript" src="Presentation/slides.js"></script>
-		<script type="text/javascript" src="Presentation/scripts/shCore.js"></script>
-		<script type="text/javascript" src="Presentation/scripts/shAutoloader.js"></script>
-		<link href="Presentation/styles/shCore.css" rel="stylesheet" type="text/css" />
-		<link href="Presentation/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="slides.js"></script>
+		<script type="text/javascript" src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shAutoloader.js"></script>
+		<link href="styles/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body style="display:none" class="presentation">
 		<section class="slides layout-widescreen template-default">
@@ -371,7 +371,7 @@ $normalFontSize: 12pt;
 			      ;
 			       
 			  for(var i = 0; i < args.length; i++)
-			      result.push(args[i].replace('@', 'Presentation/scripts/'));
+			      result.push(args[i].replace('@', 'scripts/'));
 			       
 			  return result
 			};
