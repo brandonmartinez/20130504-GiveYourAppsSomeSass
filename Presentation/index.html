@@ -48,18 +48,17 @@
 				<p>In our object-oriented approach, an "object" is a semantic grouping of CSS that would be applied to a similar block of HTML.</p>
 				<p>In pure CSS, it would look something like this:</p>
 <script type="syntaxhighlighter" class="brush: css">
-.widget {
-	display: block;
-}
+.photo { display: block; }
+					
+.photo img { width: 100px; }
 
-.widget .name {
-	font-size: 100px;
-}
+.photo .caption { font-size: 100px; }
 </script>
 <p>The HTML could look like this:</p>
 <script type="syntaxhighlighter" class="brush: html">
-<div class="widget">
-	<span class="title">A Widget!</span>
+<div class="photo">
+	<img src="sample.jpg" />
+	<span class="caption">A Photo!</span>
 </div>
 </script>
 			</article>
@@ -68,19 +67,13 @@
 				<p>SCSS makes it really easy to define our objects. By creating a top-level
 					selector, most likely a class, we can build the properties and define the object:</p>
 <script type="syntaxhighlighter" class="brush: css">
-.book {
-	.cover {
-		font-size: 24pt;
+.photo {
+	img {
+		width: 100px;
+		height: 100px;
 	}
-	
-	.text {
-		font-size: 12pt;	
-	}
-	
-	.jacket {
-		.photo {
-			width: 100px;
-		}
+	.caption {
+		font-size: 12px;
 	}
 }
 </script>
@@ -89,16 +82,9 @@
 				<h1>Building an Object: The HTML</h1>
 				<p>The previous CSS will then correlate to this HTML:</p>
 <script type="syntaxhighlighter" class="brush: html">
-<div class="book">
-	<h1 class="cover">Hello</h1>
-	<p class="text">
-		This is a sample of
-		an HTML "object".
-	</p>
-	<div class="jacket">
-		<img src="photo.jpg"
-			class="photo" />
-	</div>
+<div class="photo">
+	<img src="sample.jpg" />
+	<span class="caption">A Photo!</span>
 </div>
 </script>
 				<p>A very important point to keep in mind: this HTML is <strong>very</strong> semantic
@@ -107,24 +93,31 @@
 			<article>
 				<h1>Inheritance</h1>
 				<p>By utilizing SASS's <strong>@extend</strong> rule, we can implement a faux-inheritance
-				structure with our CSS. Again, using the <em>book</em> class as an example, we can extend
-				it to support paperback and hardcover books:</p>
+				structure with our CSS. Again, using the <em>photo</em> class as an example, we can extend
+				it to support instagram and polaroid photos:</p>
 <script type="syntaxhighlighter" class="brush: css">
-.book {
-	/* Styles from Previous Example */
-}
-.hardcover {
-	@extend .book;
-	
-	.spine {
-		font-size: 10pt;
+.photo {
+	img {
+		width: 100px;
+		height: 100px;
+	}
+	.caption {
+		font-size: 12px;
+	}
+}	
+.polaroid {
+	@extend .photo;
+
+	img {
+		border: solid 5px #fff;
+		border-bottom-width: 10px;
 	}
 }
-.paperback {
-	@extend .book;
+.instagram {
+	@extend .photo;
 	
-	.jacket {
-		display: none;
+	img {
+		-webkit-filter: sepia(100%);  
 	}
 }
 </script>	
@@ -134,41 +127,36 @@
 				<p>That will generate the following CSS; notice how SASS is reducing the overall amount of
 				code by putting multiple selectors in the style definition.</p>
 <script type="syntaxhighlighter" class="brush: css">
-.book, .hardcover, .paperback {
-  width: 150px;
-  background: #333;
-  border: 1px solid #376548; }
-  .book .cover, .hardcover .cover, .paperback .cover {
-    font-size: 24pt;
-    text-align: center; }
-  .book .text, .hardcover .text, .paperback .text {
-    font-size: 12pt; }
-  .book .jacket .photo, .hardcover .jacket .photo, .paperback .jacket .photo {
-    width: 100px; }
+.photo img, .polaroid img, .instagram img {
+  width: 100px;
+  height: 100px; }
+.photo .caption, .polaroid .caption, .instagram .caption {
+  font-size: 12px; }
 
-.hardcover .spine {
-  font-size: 10pt; }
+.polaroid img {
+  border: solid 5px white;
+  border-bottom-width: 10px; }
 
-.paperback .jacket {
-  display: none; }
-  </script>
+.instagram img {
+  -webkit-filter: sepia(100%); }
+</script>
 			</article>
 			<article>
 				<h1>Abstract Inheritance</h1>
 				<p><strong>@extend-only selectors</strong> can be used to create an abstract base object; allowing  you to create a base object to inherit from, but not generate its own styles. To define an abstract object, start the selector with <strong>%</strong>:</p>
 <script type="syntaxhighlighter" class="brush: css">
-%book {
+%photo {
 	/* Styles from Previous Example */
 }
-.hardcover {
-	@extend %book;
+.polaroid {
+	@extend %photo;
 	
 	.spine {
 		font-size: 10pt;
 	}
 }
-.paperback {
-	@extend %book;
+.instagram {
+	@extend %photo;
 	
 	.jacket {
 		display: none;
@@ -178,20 +166,20 @@
 			</article>
 			<article>
 				<h1>Abstract Inheritance</h1>
-				<p>Here's the generated CSS; notice that there are no styles for <strong>%book</strong>
+				<p>Here's the generated CSS; notice that there are no styles for <strong>%photo</strong>
 				because we defined it as being abstract (<em>@extend-only</em>).</p>
 <script type="syntaxhighlighter" class="brush: css">
-.hardcover .cover, .paperback .cover {
+.polaroid img, .instagram img {
   font-size: 24pt; }
-.hardcover .text, .paperback .text {
+.polaroid .text, .instagram .text {
   font-size: 12pt; }
-.hardcover .jacket .photo, .paperback .jacket .photo {
+.polaroid .jacket .photo, .instagram .jacket .photo {
   width: 100px; }
 
-.hardcover .spine {
+.polaroid .spine {
   font-size: 10pt; }
 
-.paperback .jacket {
+.instagram .jacket {
   display: none; }
 </script>
 			</article>
@@ -202,13 +190,13 @@
 				separate files.</p>
 <script type="syntaxhighlighter" class="brush: css">
 /* references a file called
-modules/_book.scss, which contains
+modules/_photo.scss, which contains
 the styles from our previous example */
-@import 'modules/book';
+@import 'modules/photo';
 
-@import 'modules/hardcover';
+@import 'modules/polaroid';
 
-@import 'modules/paperback';
+@import 'modules/instagram';
 </script>
 				<p>This feature will allow us to implement "mixins" or "extensions".</p>
 			</article>
@@ -223,7 +211,7 @@ the styles from our previous example */
 }
 
 /* in our main css or another file*/
-.book {
+.photo {
 	/* Styles from Previous Example */
 	@import 'pages';
 }
@@ -240,18 +228,18 @@ the styles from our previous example */
 			<article>
 				<h1>Mixins</h1>
 <script type="syntaxhighlighter" class="brush: css">
-.book {
+.photo {
   width: 150px;
   background: #333;
   border: 1px solid #376548; }
-  .book .cover {
+  .photo img {
     font-size: 24pt;
     text-align: center; }
-  .book .text {
+  .photo .text {
     font-size: 12pt; }
-  .book .jacket .photo {
+  .photo .jacket .photo {
     width: 100px; }
-  .book .pages {
+  .photo .pages {
     font-size: 12pt; }
 
 .magazine .spread {
@@ -268,8 +256,8 @@ the styles from our previous example */
 $largeFontSize: 24pt;
 $normalFontSize: 12pt;
 
-.book {
-	.cover {
+.photo {
+	img {
 		font-size: largeFontSize;
 	}
 	
@@ -291,11 +279,11 @@ $normalFontSize: 12pt;
 				object; this would also carry through into <strong>@extend</strong>, and top-level
 				variables can be used in <strong>@import</strong>ed objects, as well.</p>
 <script type="syntaxhighlighter" class="brush: css">
-.book .cover {
+.photo img {
   font-size: 24pt; }
-.book .text {
+.photo .text {
   font-size: 12pt; }
-.book .jacket .photo {
+.photo .jacket .photo {
   width: 100px; }
 </script>
 			</article>
@@ -304,8 +292,8 @@ $normalFontSize: 12pt;
 <script type="syntaxhighlighter" class="brush: css">
 $largeFontSize: 24pt;
 $normalFontSize: 12pt;
-%book {
-    .cover {
+%photo {
+    img {
         font-size: $largeFontSize;
     }
     .text {
@@ -313,14 +301,14 @@ $normalFontSize: 12pt;
     }
     @import 'pages';
 }
-.hardcover {
-    @extend %book;    
+.polaroid {
+    @extend %photo;    
     .spine {
         font-size: 10pt;
     }
 }
-.paperback {
-    @extend %book;
+.instagram {
+    @extend %photo;
     .jacket {
         display: none;
     }
@@ -330,17 +318,17 @@ $normalFontSize: 12pt;
 			<article>
 				<h1>Putting It All Together</h1>
 <script type="syntaxhighlighter" class="brush: css">
-.hardcover .cover, .paperback .cover {
+.polaroid img, .instagram img {
   font-size: 24pt; }
-.hardcover .text, .paperback .text {
+.polaroid .text, .instagram .text {
   font-size: 12pt; }
-.hardcover .pages, .paperback .pages {
+.polaroid .pages, .instagram .pages {
   font-size: 12pt; }
 
-.hardcover .spine {
+.polaroid .spine {
   font-size: 10pt; }
 
-.paperback .jacket {
+.instagram .jacket {
   display: none; }
 </script>				
 			</article>
