@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppDemo", "WebAppDemo\WebAppDemo.csproj", "{6D7363DF-F1AF-49D9-9152-DE667A966CBF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{11E52CBC-9302-410B-92B7-1B4BCC64F236}"
 	ProjectSection(SolutionItems) = preProject
 		index.html = index.html
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoDN-MVC", "DoDN\DoDN-MVC\DoDN-MVC.csproj", "{370ACC8E-07BC-4FB8-86D4-62D7C55B62B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,10 +14,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6D7363DF-F1AF-49D9-9152-DE667A966CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D7363DF-F1AF-49D9-9152-DE667A966CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D7363DF-F1AF-49D9-9152-DE667A966CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D7363DF-F1AF-49D9-9152-DE667A966CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370ACC8E-07BC-4FB8-86D4-62D7C55B62B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370ACC8E-07BC-4FB8-86D4-62D7C55B62B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370ACC8E-07BC-4FB8-86D4-62D7C55B62B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370ACC8E-07BC-4FB8-86D4-62D7C55B62B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
