@@ -1,6 +1,6 @@
 # About 20130504-GiveYourAppsSomeSass
 
-This is the repository for our (potential) presentation at FVNUG's 2013 Day of .NET. We'll be putting our presentation and code samples here.
+This is the repository for our presentation at FVNUG's 2013 Day of .NET. We'll be putting our presentation and code samples here.
 
 Below is the abstract we submitted to FVNUG.
 

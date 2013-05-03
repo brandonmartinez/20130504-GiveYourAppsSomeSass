@@ -1,3 +1,4 @@
+@charset "IBM437";
 /* 
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -212,7 +213,7 @@ input, select {
   color: #009900 !important; }
 
 .syntaxhighlighter .functions {
-  color: deeppink !important; }
+  color: #ff1493 !important; }
 
 .syntaxhighlighter .constants {
   color: #0066cc !important; }
@@ -226,7 +227,7 @@ input, select {
   color: gray !important; }
 
 .syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
-  color: deeppink !important; }
+  color: #ff1493 !important; }
 
 .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
   color: red !important; }
@@ -295,10 +296,10 @@ input, select {
     background-color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-out;
-    -o-transition: -o-transform 0.3s ease-out;
-    -moz-transition: -moz-transform 0.3s ease-out;
-    -webkit-transition: -webkit-transform 0.3s ease-out; }
+    transition: transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    -moz-transition: -moz-transform .3s ease-out;
+    -webkit-transition: -webkit-transform .3s ease-out; }
     .slides > article img {
       display: block; }
       .slides > article img .align-center {
@@ -364,7 +365,7 @@ input, select {
     -moz-transform: translate(2260px);
     -webkit-transform: translate3d(2260px, 0, 0); }
   .slides > article {
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     color: #666666;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     font-size: 30px;
@@ -375,11 +376,11 @@ input, select {
     overflow: scroll;
     padding: 10px 0;
     margin: 10px 0;
-    border-top: 3px dashed #cccccc;
-    border-bottom: 3px dashed #cccccc; }
+    border-top: 3px dashed #ccc;
+    border-bottom: 3px dashed #ccc; }
     .slides .codewindow pre, .slides .codewindow code {
-      font-size: 12px!important;
-      line-height: 14px!important; }
+      font-size: 12px !important;
+      line-height: 14px !important; }
     .slides .codewindow::-webkit-scrollbar {
       -webkit-appearance: none;
       width: 8px; }
@@ -458,7 +459,7 @@ input, select {
       margin-left: -0.75em;
       position: absolute; }
   .slides pre {
-    font-family: "Droid Sans Mono", "Courier New", monospace;
+    font-family: 'Droid Sans Mono', 'Courier New', monospace;
     font-size: 20px;
     line-height: 28px;
     padding: 5px 10px;
@@ -472,7 +473,7 @@ input, select {
     overflow: hidden; }
   .slides code {
     font-size: 95%;
-    font-family: "Droid Sans Mono", "Courier New", monospace;
+    font-family: 'Droid Sans Mono', 'Courier New', monospace;
     color: black; }
   .slides iframe {
     width: 100%;
@@ -538,7 +539,7 @@ input, select {
     margin-top: 100px;
     margin-right: 150px; }
     .slides q::before {
-      content: 'ΓÇ£';
+      content: '“';
       position: absolute;
       display: inline-block;
       margin-left: -2.1em;
@@ -547,7 +548,7 @@ input, select {
       font-size: 90px;
       color: silver; }
     .slides q::after {
-      content: 'ΓÇ¥';
+      content: '”';
       position: absolute;
       margin-left: .1em;
       font-size: 90px;
@@ -558,7 +559,7 @@ input, select {
     margin-top: 20px;
     margin-right: 150px; }
     .slides div.author::before {
-      content: 'ΓÇö'; }
+      content: '—'; }
   .slides article.smaller p, .slides article.smaller ul, .slides article.smaller table {
     font-size: 20px;
     line-height: 24px;
@@ -579,3 +580,4 @@ input, select {
     -webkit-transition: opacity 0.5s ease-in-out 0.2s; }
   .slides .to-build {
     opacity: 0; }
+
