@@ -288,51 +288,6 @@ $normalFontSize: 12pt;
 </script>
 			</article>
 			<article>
-				<h1>Putting It All Together</h1>
-<script type="syntaxhighlighter" class="brush: css">
-$largeFontSize: 24pt;
-$normalFontSize: 12pt;
-%photo {
-    img {
-        font-size: $largeFontSize;
-    }
-    .text {
-        font-size: $normalFontSize;  
-    }
-    @import 'pages';
-}
-.polaroid {
-    @extend %photo;    
-    .spine {
-        font-size: 10pt;
-    }
-}
-.instagram {
-    @extend %photo;
-    .jacket {
-        display: none;
-    }
-}
-</script>				
-			</article>
-			<article>
-				<h1>Putting It All Together</h1>
-<script type="syntaxhighlighter" class="brush: css">
-.polaroid img, .instagram img {
-  font-size: 24pt; }
-.polaroid .text, .instagram .text {
-  font-size: 12pt; }
-.polaroid .pages, .instagram .pages {
-  font-size: 12pt; }
-
-.polaroid .spine {
-  font-size: 10pt; }
-
-.instagram .jacket {
-  display: none; }
-</script>				
-			</article>
-			<article>
 				<h1>Demo 1</h1><h2>Windows 8 Application</h2>
 			</article>
 			<article>
