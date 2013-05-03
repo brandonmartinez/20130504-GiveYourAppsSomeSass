@@ -53,7 +53,6 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\T.css" />
     <Content Include="css\Site.min.css" />
     <Content Include="css\Site.scss" />
     <Content Include="default.html" />
