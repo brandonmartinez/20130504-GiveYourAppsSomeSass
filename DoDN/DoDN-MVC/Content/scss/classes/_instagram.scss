@@ -1,0 +1,13 @@
+.instagram {
+	@extend %photo;
+	
+	border: $defaultGutter solid black;
+	@include lightenColor(background-color, $darkBackgroundColor);
+	img{
+		opacity: 0.4;
+	}
+	.caption{
+		@include lightenColor(color, $defaultFontColor);
+		padding: 0;
+	}
+}

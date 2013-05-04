@@ -1,0 +1,13 @@
+.polaroid {
+	@extend %photo;
+	
+    padding: $defaultGutter {
+		bottom: 0;
+	}
+	img{
+		$imgSize: $defaultPhotoSize - ($polaroidBorderThickness * 2);
+		height: $imgSize;
+		width: $imgSize;
+		border: $polaroidBorderThickness inset $grey;
+	}
+}

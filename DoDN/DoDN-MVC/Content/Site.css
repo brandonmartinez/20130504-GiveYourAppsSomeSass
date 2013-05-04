@@ -1,32 +1,49 @@
-.instagram, .polaroid {
+.polaroid, .instagram {
   display: inline-block;
   margin: 15px;
   width: 230px;
   background: white;
   border: 1px solid black; }
-  .rotate1Degree.instagram, .rotate1Degree.polaroid {
+  .rotate1Degree.polaroid, .rotate1Degree.instagram {
     transform: rotate(1deg);
     -webkit-transform: rotate(1deg); }
-  .rotate2Degrees.instagram, .rotate2Degrees.polaroid {
+  .rotate2Degrees.polaroid, .rotate2Degrees.instagram {
     transform: rotate(2deg);
     -webkit-transform: rotate(2deg); }
-  .rotateMinus3Degrees.instagram, .rotateMinus3Degrees.polaroid {
+  .rotateMinus3Degrees.polaroid, .rotateMinus3Degrees.instagram {
     transform: rotate(-3deg);
     -webkit-transform: rotate(-3deg); }
-  .rotateMinus4Degrees.instagram, .rotateMinus4Degrees.polaroid {
+  .rotateMinus4Degrees.polaroid, .rotateMinus4Degrees.instagram {
     transform: rotate(-4deg);
     -webkit-transform: rotate(-4deg); }
-  .instagram img, .polaroid img {
+  .polaroid img, .instagram img {
     width: 230px;
     height: 230px;
     background: black; }
-  .instagram .caption, .polaroid .caption {
+  .polaroid .caption, .instagram .caption {
     text-align: center;
     color: #333333;
     font-family: "Buxton Sketch";
     font-size: 24px;
     font-weight: bold;
     padding: 10px; }
+
+.polaroid {
+  padding: 15px;
+    padding-bottom: 0; }
+  .polaroid img {
+    height: 226px;
+    width: 226px;
+    border: 2px inset grey; }
+
+.instagram {
+  border: 15px solid black;
+  background-color: #333333; }
+  .instagram img {
+    opacity: 0.4; }
+  .instagram .caption {
+    color: #666666;
+    padding: 0; }
 
 body {
   margin: 15px;

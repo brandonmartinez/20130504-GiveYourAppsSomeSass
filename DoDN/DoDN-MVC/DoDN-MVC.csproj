@@ -180,6 +180,21 @@
   <ItemGroup>
     <Content Include="Content\Site.scss" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\scss\_app.scss" />
+    <Content Include="Content\scss\_classes.scss" />
+    <Content Include="Content\scss\_mixins.scss" />
+    <Content Include="Content\scss\_variables.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\scss\classes\_photo.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\scss\classes\_polaroid.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\scss\classes\_instagram.scss" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
