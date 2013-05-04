@@ -1,3 +1,9 @@
+body {
+  margin: 15px;
+  background: green;
+  position: relative;
+  -ms-touch-action: auto; }
+
 .instagram, .polaroid {
   display: inline-block;
   margin: 15px;
@@ -27,12 +33,6 @@
     font-size: 24px;
     font-weight: bold;
     padding: 10px; }
-
-body {
-  margin: 15px;
-  background: green;
-  position: relative;
-  -ms-touch-action: auto; }
 
 .instagram {
   border: 15px solid black;

@@ -1,0 +1,10 @@
+//**transformRotate will rotate by supplied parameter or default to 2 degrees if none is supplied
+@mixin transformRotate($degrees:2deg){
+	transform: rotate($degrees);
+	-webkit-transform: rotate($degrees);
+}
+
+//**lightenColor will lighten a color by #333333 and apply it to the attribute supplied
+@mixin lightenColor($attribute, $color){
+	#{$attribute}: ($color + #333)
+}

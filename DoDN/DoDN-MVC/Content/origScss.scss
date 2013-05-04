@@ -1,0 +1,100 @@
+//**Body Variables
+$bodyBackground: #008000;
+
+//**Common Lengths
+$defaultGutter: 15px;
+$defaultPhotoSize: 230px;
+
+//**Default Colors
+$defaultFontColor: #333;
+$defaultBackgroundColor: white;
+$darkBackgroundColor: #000000;
+$grey: grey;
+
+//**Border Variables
+$solidBorder: 1px solid black;
+$polaroidBorderThickness: 2px;
+
+//**transformRotate will rotate by supplied parameter or default to 2 degrees if none is supplied
+@mixin transformRotate($degrees:2deg){
+	transform: rotate($degrees);
+	-webkit-transform: rotate($degrees);
+}
+
+//**lightenColor will lighten a color by #333333 and apply it to the attribute supplied
+@mixin lightenColor($attribute, $color){
+	#{$attribute}: ($color + #333)
+}
+
+body {
+	margin: $defaultGutter;
+    background: $bodyBackground;
+    position: relative;
+    -ms-touch-action: auto;
+}
+
+//**Abstract Class Photo: Base class to style photos in apps
+%photo{
+	display: inline-block;
+	margin: $defaultGutter;
+    width: $defaultPhotoSize;
+	background: $defaultBackgroundColor;
+    border: $solidBorder;
+
+	&.rotate1Degree{
+		@include transformRotate(1deg);
+	}
+	&.rotate2Degrees{
+		@include transformRotate(2deg);
+	}
+	&.rotateMinus3Degrees{
+		@include transformRotate(-3deg);
+	}
+	&.rotateMinus4Degrees{
+		@include transformRotate(-4deg);
+	}
+
+	img {	
+		width: $defaultPhotoSize;
+		height: $defaultPhotoSize;
+		background: black;
+	}
+	.caption {
+		text-align: center;
+		color: $defaultFontColor;
+		font: {
+			family: "Buxton Sketch";
+			size: 24px;
+			weight: bold;
+		}
+		padding: 10px;
+	}
+}
+
+.instagram{
+	@extend %photo;
+	
+	border: $defaultGutter solid black;
+	@include lightenColor(background-color, $darkBackgroundColor);
+	img{
+		opacity: 0.4;
+	}
+	.caption{
+		@include lightenColor(color, $defaultFontColor);
+		padding: 0;
+	}
+}
+
+.polaroid {
+	@extend %photo;
+	
+    padding: $defaultGutter {
+		bottom: 0;
+	}
+	img{
+		$imgSize: $defaultPhotoSize - ($polaroidBorderThickness * 2);
+		height: $imgSize;
+		width: $imgSize;
+		border: $polaroidBorderThickness inset $grey;
+	}
+}

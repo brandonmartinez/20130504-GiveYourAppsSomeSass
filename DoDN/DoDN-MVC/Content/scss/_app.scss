@@ -1,0 +1,34 @@
+body {
+	margin: $defaultGutter;
+    background: $bodyBackground;
+    position: relative;
+    -ms-touch-action: auto;
+}
+
+.instagram{
+	@extend %photo;
+	
+	border: $defaultGutter solid black;
+	@include lightenColor(background-color, $darkBackgroundColor);
+	img{
+		opacity: 0.4;
+	}
+	.caption{
+		@include lightenColor(color, $defaultFontColor);
+		padding: 0;
+	}
+}
+
+.polaroid {
+	@extend %photo;
+	
+    padding: $defaultGutter {
+		bottom: 0;
+	}
+	img{
+		$imgSize: $defaultPhotoSize - ($polaroidBorderThickness * 2);
+		height: $imgSize;
+		width: $imgSize;
+		border: $polaroidBorderThickness inset $grey;
+	}
+}
