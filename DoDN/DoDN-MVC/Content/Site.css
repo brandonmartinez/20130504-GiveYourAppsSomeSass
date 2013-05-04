@@ -11,13 +11,17 @@ body {
   background: white;
   border: 1px solid black; }
   .rotate1Degree.instagram, .rotate1Degree.polaroid {
-    transform: rotate(1deg); }
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg); }
   .rotate2Degrees.instagram, .rotate2Degrees.polaroid {
-    transform: rotate(2deg); }
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg); }
   .rotateMinus3Degrees.instagram, .rotateMinus3Degrees.polaroid {
-    transform: rotate(-3deg); }
+    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg); }
   .rotateMinus4Degrees.instagram, .rotateMinus4Degrees.polaroid {
-    transform: rotate(-4deg); }
+    transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg); }
   .instagram img, .polaroid img {
     width: 230px;
     height: 230px;
@@ -36,9 +40,14 @@ body {
   .instagram img {
     opacity: 0.4; }
   .instagram .caption {
-    color: #666666; }
+    color: #666666;
+    padding: 0; }
 
 .polaroid {
   padding: 15px;
     padding-bottom: 0; }
+  .polaroid img {
+    height: 226px;
+    width: 226px;
+    border: 2px inset grey; }
 
