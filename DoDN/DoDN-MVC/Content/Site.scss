@@ -1,34 +1,36 @@
-﻿$background: #008000;
+﻿$bodyBackground: #008000;
+
+$defaultGutter: 15px;
+$defaultPhotoSize: 230px;
+
+$defaultFontColor: #333;
+$defaultBackgroundColor: white;
+$darkBackgroundColor: #000000;
+
 $solidBorder: 1px solid black;
 
 @mixin transformRotate($degrees:2deg){
 	transform: rotate($degrees);
 }
 
+@mixin lightenColor($attribute, $color){
+	#{$attribute}: ($color + #333)
+}
+
 body {
-	margin: 10px;
-    background: $background;
-    //overflow: hidden;
+	margin: $defaultGutter;
+    background: $bodyBackground;
     position: relative;
     -ms-touch-action: auto;
 }
 
-.instagram{
-	img{
-		opacity: 0.4;
-	}
-}
-
-.polaroid {
+%photo{
 	display: inline-block;
-    width:230px;
-	background: white;
+	margin: $defaultGutter;
+    width: $defaultPhotoSize;
+	background: $defaultBackgroundColor;
     border: $solidBorder;
-    margin: 15px;
-    padding: 15px {
-		bottom: 0px;
-	}
-    	
+
 	&.rotate1Degree{
 		@include transformRotate(1deg);
 	}
@@ -43,18 +45,40 @@ body {
 	}
 
 	img {	
-		width: 230px;
-		height: 230px;
+		width: $defaultPhotoSize;
+		height: $defaultPhotoSize;
 		background: black;
 	}
-	.handwriting {
+	.caption {
 		text-align: center;
-		color: #333;
+		color: $defaultFontColor;
 		font: {
-			family:"Buxton Sketch";
-			size:24px;
+			family: "Buxton Sketch";
+			size: 24px;
 			weight: bold;
 		}
-		padding:10px;
+		padding: 10px;
+	}
+}
+
+.instagram{
+	@extend %photo;
+	
+	border: $defaultGutter solid black;
+	@include lightenColor(background-color, $darkBackgroundColor);
+	img{
+		opacity: 0.4;
+	}
+	.caption{
+		@include lightenColor(color, $defaultFontColor);
+		
+	}
+}
+
+.polaroid {
+	@extend %photo;
+	
+    padding: $defaultGutter {
+		bottom: 0;
 	}
 }

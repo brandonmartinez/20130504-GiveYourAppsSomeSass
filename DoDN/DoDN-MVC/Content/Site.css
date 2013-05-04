@@ -1,37 +1,44 @@
 body {
-  margin: 10px;
+  margin: 15px;
   background: green;
   position: relative;
   -ms-touch-action: auto; }
 
-.instagram img {
-  opacity: 0.4; }
-
-.polaroid {
+.instagram, .polaroid {
   display: inline-block;
+  margin: 15px;
   width: 230px;
   background: white;
-  border: 1px solid black;
-  margin: 15px;
-  padding: 15px;
-    padding-bottom: 0px; }
-  .polaroid.rotate1Degree {
+  border: 1px solid black; }
+  .rotate1Degree.instagram, .rotate1Degree.polaroid {
     transform: rotate(1deg); }
-  .polaroid.rotate2Degrees {
+  .rotate2Degrees.instagram, .rotate2Degrees.polaroid {
     transform: rotate(2deg); }
-  .polaroid.rotateMinus3Degrees {
+  .rotateMinus3Degrees.instagram, .rotateMinus3Degrees.polaroid {
     transform: rotate(-3deg); }
-  .polaroid.rotateMinus4Degrees {
+  .rotateMinus4Degrees.instagram, .rotateMinus4Degrees.polaroid {
     transform: rotate(-4deg); }
-  .polaroid img {
+  .instagram img, .polaroid img {
     width: 230px;
     height: 230px;
     background: black; }
-  .polaroid .handwriting {
+  .instagram .caption, .polaroid .caption {
     text-align: center;
-    color: #333;
+    color: #333333;
     font-family: "Buxton Sketch";
     font-size: 24px;
     font-weight: bold;
     padding: 10px; }
+
+.instagram {
+  border: 15px solid black;
+  background-color: #333333; }
+  .instagram img {
+    opacity: 0.4; }
+  .instagram .caption {
+    color: #666666; }
+
+.polaroid {
+  padding: 15px;
+    padding-bottom: 0; }
 
