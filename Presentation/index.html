@@ -25,7 +25,16 @@
 			<article id="slideIntro">
 				<h1>Give Your Apps Some SASS!</h1>
 				<p>Using OOCSS and SASS to Build Web and Native Applications</p>
-				<img src="http://sass-lang.com/images/sass.gif" class="align-center" style="margin-top: 100px; margin-left: auto; margin-right: auto;" />
+				<img src="Images/wtfcss.gif" class="align-center" style="margin-top: 100px; margin-left: auto; margin-right: auto;" />
+			</article>
+			<article>
+				<h1>About Us</h1>
+				<h2>Brandon Martinez</h2>
+				<img src="Images/brandon.jpg" class="avatar" />
+				<p>Brandon has been working with web technologies personally and professionally for over ten years. He is also a prolific photographer, a recovering Ruby developer, and is a bit of a foodie.</p>
+				<h2>Carl Schweitzer</h2>
+				<img src="Images/carl.jpg" class="avatar" />
+				<p>Carl has a strong background in many of the Microsoft technologies and already has two published Windows Phone apps in the Microsoft App Store.  Carl is also a father of four boys and enjoys making artisanal foods. </p>
 			</article>
 			<article>
 				<h1>Objected-Oriented <em>CSS</em>?</h1>
@@ -93,21 +102,17 @@
 			<article>
 				<h1>Inheritance</h1>
 				<p>By utilizing SASS's <strong>@extend</strong> rule, we can implement a faux-inheritance
-				structure with our CSS. Again, using the <em>photo</em> class as an example, we can extend
-				it to support instagram and polaroid photos:</p>
+				structure with our CSS.</p>
 <script type="syntaxhighlighter" class="brush: css">
 .photo {
 	img {
 		width: 100px;
 		height: 100px;
 	}
-	.caption {
-		font-size: 12px;
-	}
+	.caption { font-size: 12px; }
 }	
 .polaroid {
 	@extend .photo;
-
 	img {
 		border: solid 5px #fff;
 		border-bottom-width: 10px;
@@ -115,10 +120,7 @@
 }
 .instagram {
 	@extend .photo;
-	
-	img {
-		-webkit-filter: sepia(100%);  
-	}
+	img { -webkit-filter: sepia(100%); }
 }
 </script>	
 			</article>
@@ -146,20 +148,17 @@
 				<p><strong>@extend-only selectors</strong> can be used to create an abstract base object; allowing  you to create a base object to inherit from, but not generate its own styles. To define an abstract object, start the selector with <strong>%</strong>:</p>
 <script type="syntaxhighlighter" class="brush: css">
 %photo {
-	/* Styles from Previous Example */
+	img {
+		width: 100px;
+		height: 100px;
+	}
+	.caption { font-size: 12px; }
 }
 .polaroid {
 	@extend %photo;
 	
-	.spine {
+	.caption {
 		font-size: 10pt;
-	}
-}
-.instagram {
-	@extend %photo;
-	
-	.jacket {
-		display: none;
 	}
 }
 </script>
@@ -169,18 +168,14 @@
 				<p>Here's the generated CSS; notice that there are no styles for <strong>%photo</strong>
 				because we defined it as being abstract (<em>@extend-only</em>).</p>
 <script type="syntaxhighlighter" class="brush: css">
-.polaroid img, .instagram img {
-  font-size: 24pt; }
-.polaroid .text, .instagram .text {
-  font-size: 12pt; }
-.polaroid .jacket .photo, .instagram .jacket .photo {
-  width: 100px; }
+.polaroid img {
+  width: 100px;
+  height: 100px; }
+.polaroid .caption {
+  font-size: 12px; }
 
-.polaroid .spine {
+.polaroid .caption {
   font-size: 10pt; }
-
-.instagram .jacket {
-  display: none; }
 </script>
 			</article>
 			<article>
@@ -204,48 +199,51 @@ the styles from our previous example */
 				<h1>Mixins</h1>
 				<p>SASS supports calling the <strong>@import</strong> rule from <em>within</em> nested styles. As such, we can mixin functionality to classes by dropping in new definitions:</p>
 <script type="syntaxhighlighter" class="brush: css">
-/* This would be in a separate file, _pages.scss */
-.pages {
-	font-size: 12pt;
-	
+/* This would be in a separate file, _meta.scss */
+.meta {
+	.caption, .copyright {
+		font-size: 12pt;
+	}
+
+	.copyright {
+		font-style: italic;
+	}
 }
 
 /* in our main css or another file*/
 .photo {
-	/* Styles from Previous Example */
-	@import 'pages';
+	img {
+		width: 100px;
+		height: 100px;
+	}
+	@import 'meta';
 }
 
-.magazine {
-	.spread {
-		font-size: 12pt;
-	}
-
-	@import 'pages';
+.banner {
+	@import 'meta';
 }
 </script>
 			</article>
 			<article>
 				<h1>Mixins</h1>
 <script type="syntaxhighlighter" class="brush: css">
+/* in our main css or another file*/
 .photo {
-  width: 150px;
-  background: #333;
-  border: 1px solid #376548; }
+  /* This would be in a separate file, _meta.scss */ }
   .photo img {
-    font-size: 24pt;
-    text-align: center; }
-  .photo .text {
+    width: 100px;
+    height: 100px; }
+  .photo .meta .caption, .photo .meta .copyright {
     font-size: 12pt; }
-  .photo .jacket .photo {
-    width: 100px; }
-  .photo .pages {
-    font-size: 12pt; }
+  .photo .meta .copyright {
+    font-style: italic; }
 
-.magazine .spread {
-  font-size: 12pt; }
-.magazine .pages {
-  font-size: 12pt; }
+.banner {
+  /* This would be in a separate file, _meta.scss */ }
+  .banner .meta .caption, .banner .meta .copyright {
+    font-size: 12pt; }
+  .banner .meta .copyright {
+    font-style: italic; }
 </script>
 			</article>
 			<article>
@@ -257,18 +255,12 @@ $largeFontSize: 24pt;
 $normalFontSize: 12pt;
 
 .photo {
-	img {
-		font-size: largeFontSize;
+	.caption {
+		font-size: $largeFontSize;
 	}
-	
-	.text {
-		font-size: normalFontSize;	
-	}
-	
-	.jacket {
-		.photo {
-			width: 100px;
-		}
+
+	.copyright {
+		font-size: $normalFontSize;
 	}
 }
 </script>
@@ -279,29 +271,31 @@ $normalFontSize: 12pt;
 				object; this would also carry through into <strong>@extend</strong>, and top-level
 				variables can be used in <strong>@import</strong>ed objects, as well.</p>
 <script type="syntaxhighlighter" class="brush: css">
-.photo img {
+.photo .caption {
   font-size: 24pt; }
-.photo .text {
+.photo .copyright {
   font-size: 12pt; }
-.photo .jacket .photo {
-  width: 100px; }
 </script>
 			</article>
 			<article>
-				<h1>Demo 1</h1><h2>Windows 8 Application</h2>
-			</article>
-			<article>
-				<h1>Demo 2</h1><h2>ASP.NET Web Application</h2>
+				<h1>Demo</h1>
+				<h2>Windows 8 Application</h2>
+				<h2>ASP.NET Web Application</h2>
 			</article>
 			<article>
 				<h1>Thank You</h1>
 				
-				<h2>References</h2>
+				<h2>Links of Interest</h2>
 				
 				<ul>
-					<li><a href="http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/" title="OOCSS + Sass = The best way to CSS" target="_blank">OOCSS + Sass = The best way to CSS</a></li>
-					<li><a href="http://oocss.org/" title="Object-Oriented CSS" target="_blank">Object-Oriented CSS</a></li>
-					<li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/" title="An Introduction To Object Oriented CSS (OOCSS)" target="_blank">An Introduction To Object Oriented CSS (OOCSS)</a></li>
+					<li><a href="http://dayofdotnet.caschw.com" target="_blank">Source Code and Presentation: dayofdotnet.caschw.com</a></li>
+					<li><a href="http://www.caschw.com/" target="_blank">caschw.com</a> | <a href="http://twitter.com/carlschweitzer" target="_blank">@carlscweitzer</a></li>
+					<li><a href="http://www.brandonmartinez.com/" target="_blank">brandonmartinez.com</a> | <a href="http://twitter.brandonmartinez.com/" target="_blank">@brandonmartinez</a></li>
+				</ul>
+
+				<h2>Resources</h2>
+				<ul>
+					<li><a href="http://sass-lang.com/" target="_blank">Sass. Style With Attitude.</a></li>
 					<li><a href="http://www.mindscapehq.com/products/web-workbench" title="Mindscape Web Workbench" target="_blank">Mindscape Web Workbench</a></li>
 				</ul>
 			</article>

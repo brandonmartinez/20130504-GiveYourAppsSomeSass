@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<web-workbench>
+  <file name="_colors.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="OutputFolder"></setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_fonts.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="OutputFolder"></setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_presentation.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="OutputFolder"></setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_reset.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="OutputFolder"></setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_slides.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="OutputFolder"></setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="_syntaxHighlighter.scss">
+    <setting name="Compile">False</setting>
+    <setting name="Minify">False</setting>
+    <setting name="OutputFolder"></setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <file name="styles.scss">
+    <setting name="Compile">True</setting>
+    <setting name="Minify">True</setting>
+    <setting name="OutputFolder">.</setting>
+    <setting name="CompileStyle">Nested</setting>
+    <setting name="DebugInfo">False</setting>
+  </file>
+  <setting name="IsCompassProject">True</setting>
+</web-workbench>

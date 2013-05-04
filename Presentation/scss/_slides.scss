@@ -41,6 +41,12 @@
 			.align-center {
 				margin: 20px auto;
 			}
+
+			&.avatar {
+				float: left;
+				margin-right: 15px;
+				margin-bottom: 15px;
+			}
 		}
 
         &.far-past {

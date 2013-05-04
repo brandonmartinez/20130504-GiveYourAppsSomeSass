@@ -304,6 +304,10 @@ input, select {
       display: block; }
       .slides > article img .align-center {
         margin: 20px auto; }
+      .slides > article img.avatar {
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px; }
     .slides > article.far-past {
       display: block;
       transform: translate(-2040px);
@@ -580,4 +584,3 @@ input, select {
     -webkit-transition: opacity 0.5s ease-in-out 0.2s; }
   .slides .to-build {
     opacity: 0; }
-
